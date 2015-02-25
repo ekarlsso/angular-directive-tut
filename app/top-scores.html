@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Top Scores</div>
+  <table class="table">
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+    <tr ng-repeat="player in topScores.players">
+      <td>{{$index + 1}}</td>
+      <td>{{player.name}} <a href="" ng-click="ctrl.removePlayer(player)"><span class="glyphicon glyphicon-trash"></span></a></td>
+      <td>{{player.score}}</td>
+    </tr>
+  </table>
+  <div class="panel-footer">
+    <form class="form-inline" ng-submit="ctrl.addUser()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" ng-model="newPlayer.name" name="name" placeholder="e.g. John Smith">
+      </div>
+      <div class="form-group">
+        <label for="score">Score</label>
+        <input type="text" class="form-control" ng-model="newPlayer.score" name="score" placeholder="e.g. 100">
+      </div>
+      <button type="submit" class="btn btn-default">Add</button>
+    </form>            
+  </div>
+</div>
